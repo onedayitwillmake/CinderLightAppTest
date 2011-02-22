@@ -1,110 +1,108 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
-#include "cinder/gl/Texture.h"
-#include "cinder/gl/Light.h"
-#include "cinder/gl/Material.h"
+#include "cinder/Camera.h"
 #include "cinder/MayaCamUI.h"
+#include "InfoPanel.h"
 
 using namespace ci;
 using namespace ci::app;
-using namespace std;
+
+GLfloat no_mat[]			= { 0.0, 0.0, 0.0, 1.0 };
+GLfloat mat_ambient[]		= { 0.6, 0.3, 0.4, 1.0 };
+GLfloat mat_diffuse[]		= { 0.3, 0.5, 0.8, 1.0 };
+GLfloat mat_specular[]		= { 1.0, 1.0, 1.0, 1.0 };
+GLfloat mat_emission[]		= { 0.0, 0.1, 0.3, 0.0 };
+
+GLfloat mat_shininess[]		= { 128.0 };
+GLfloat no_shininess[]		= { 0.0 };
 
 class CinderLightApp : public AppBasic {
-  public:
+public:
 	void prepareSettings( Settings *settings );
 	void setup();
 	void setupCamera();
-	void setupLights();
-	
-	// Keyboard
-	bool _isOptionDown;
-	void keyUp	( KeyEvent event);
-	void keyDown( KeyEvent event);
-	
-	// Mouse
-	void mouseMove( MouseEvent event );
-	void mouseDown( MouseEvent event );
-	void mouseDrag( MouseEvent event );
-	void mouseUp  ( MouseEvent event );
-	
-	// Loop
 	void update();
+	void resize( ResizeEvent event );
+	void mouseMove( MouseEvent event );
+	void mouseDrag( MouseEvent event );
+	void mouseDown( MouseEvent event );
+	void mouseUp( MouseEvent event );
+	void keyDown( KeyEvent event );
 	void draw();
+	void drawInfoPanel();
 	
+	float			mCounter;
+	InfoPanel		mInfoPanel;
+	CameraPersp		mCam;
+	Vec2f			mMousePos;
+	bool mIsMouseDown;
+	
+	bool DIFFUSE;
+	bool AMBIENT;
+	bool SPECULAR;
+	bool EMISSIVE;
+	float mDirectional;
+	
+	bool renderInfoPanel;
 	
 	MayaCamUI				mMayaCam;
-	ci::CameraPersp			*_cameraPerspective;
-	ci::Quatf				*_sceneRotation;
-	
-	// Light
-	ci::gl::Light			*_light;
-	ci::gl::Material		*_ribbonMaterial;
-	
 	// animation
 	double				mTimePrevious;
 	double				mTime;
 	bool				bAnimate;
 };
 
-#define APP_INITIAL_WIDTH 1024
-#define APP_INITIAL_HEIGHT 768
-
-void CinderLightApp::prepareSettings( Settings* settings )
+void CinderLightApp::prepareSettings( Settings *settings )
 {
-	settings->setWindowSize( APP_INITIAL_WIDTH, APP_INITIAL_HEIGHT );
+	settings->setWindowSize( 800, 600 );
 	settings->setFrameRate( 60.0f );
+	settings->setFullScreen( false );
 }
+
 void CinderLightApp::setup()
 {
-	setupCamera();
-	setupLights();
+	renderInfoPanel = false;
+	mIsMouseDown = false;
+	DIFFUSE		= true;
+	AMBIENT		= false;
+	SPECULAR	= false;
+	EMISSIVE	= false;
 	
-	_isOptionDown = false;
+	mDirectional = 1.0f;
+	glClearColor( 0.0f, 0.0f, 0.0f, 1.0f );
 	
-	mTimePrevious = getElapsedSeconds();
-	mTime = 0.0;
-	bAnimate = false;
+	gl::enableDepthWrite();
+	gl::enableDepthRead();
+	gl::enableAlphaBlending();
+	mCounter = 0.0f;
+	mInfoPanel.createTexture();
+	glDisable( GL_TEXTURE_2D );
 }
 
 void CinderLightApp::setupCamera()
 {
 	// Create camera
 	Vec3f p = Vec3f::one() * 10.0f;
-	CameraPersp cam = CameraPersp( getWindowWidth(), getWindowHeight(), 45.0f );
+	CameraPersp cam = CameraPersp( getWindowWidth(), getWindowHeight(), 65.0f );
 	cam.setEyePoint( p );
 	cam.setCenterOfInterestPoint( Vec3f::zero() );
-	cam.setPerspective( 45.0f, getWindowAspectRatio(), 0.1f, 500.0f );
+	cam.setPerspective( 65.0f, getWindowAspectRatio(), 0.1f, 500.0f );
 	
 	// Set mayacamera
 	mMayaCam.setCurrentCam( cam );
-	
-	// set up our projector (a special type of light)
-	_light = new gl::Light( gl::Light::POINT, 0 );
-	//mLight = new gl::Light( gl::Light::DIRECTIONAL, 0 );
-	_light->lookAt( Vec3f( 0, 5, 5 ), Vec3f( 0, 0, 0 ) );
-	_light->setAmbient( Color( 1.0f, 1.0f, 1.0f ) );
-	_light->setDiffuse( Color( 1.0f, 1.0f, 1.0f ) );
-	_light->setSpecular( Color( 1.0f, 1.0f, 1.0f ) );
-//	_light->setShadowParams( 40.0f, 1.0f, 30.0f );
-	_light->enable();
-	
-	// setup our scene (a simple gray cube)
-	_ribbonMaterial = new gl::Material();
-	_ribbonMaterial->setSpecular( Color::white() );
-	_ribbonMaterial->setDiffuse( Color(0.9f, 0.1f, 0.6f) );
-	_ribbonMaterial->setAmbient( Color( 0.6f, 0.2f, 0.2f ) );
-	_ribbonMaterial->setShininess( 5.0f );
-	
-
 }
 
-void CinderLightApp::setupLights()
+void CinderLightApp::resize( ResizeEvent event )
 {
-	
+	mCam.lookAt( Vec3f( 0.0f, 0.0f, 750.0f ), Vec3f::zero() );
+	mCam.setPerspective( 60, getWindowAspectRatio(), 1, 1000 );
+	gl::setMatrices( mCam );
 }
 
 void CinderLightApp::mouseMove( MouseEvent event )
 {
+	mMousePos.x = event.getX() - getWindowWidth() * 0.5f;
+	mMousePos.y = getWindowHeight() * 0.5f - event.getY();
 }
 
 void CinderLightApp::mouseDown( MouseEvent event )
@@ -117,6 +115,7 @@ void CinderLightApp::mouseDrag( MouseEvent event )
 {
 	// let the camera handle the interaction
 	mMayaCam.mouseDrag( event.getPos(), event.isLeftDown(), event.isMetaDown(), event.isRightDown() );
+	mouseMove( event );
 }
 
 void CinderLightApp::mouseUp( MouseEvent event )
@@ -125,63 +124,138 @@ void CinderLightApp::mouseUp( MouseEvent event )
 	mMayaCam.mouseDown( event.getPos() );
 }
 
-void CinderLightApp::keyDown( KeyEvent event ) {
-//	_isOptionDown = event.isMetaDown();
-	if(event.getCode() == KeyEvent::KEY_a) {
-		bAnimate = !bAnimate;
+
+void CinderLightApp::keyDown( KeyEvent event )
+{
+	if( event.getChar() == 'd' || event.getChar() == 'D' ){
+		DIFFUSE = ! DIFFUSE;
+	}
+	else if( event.getChar() == 'a' || event.getChar() == 'A' ){
+		AMBIENT = ! AMBIENT;
+	}
+	else if( event.getChar() == 's' || event.getChar() == 'S' ){
+		SPECULAR = ! SPECULAR;
+	}
+	else if( event.getChar() == 'e' || event.getChar() == 'E' ){
+		EMISSIVE = ! EMISSIVE;
+	}
+	else if( event.getChar() == 'f' || event.getChar() == 'F' ){
+		setFullScreen( ! isFullScreen() );
+	}
+	else if( event.getChar() == '/' || event.getChar() == '?' ){
+		mInfoPanel.toggleState();
+	}
+	else if( event.getChar() == 'r' || event.getChar() == 'R' ){
+		renderInfoPanel = ! renderInfoPanel;
+	}
+	else if( event.getChar() == ',' || event.getChar() == '<' ){
+		mat_shininess[0] *= 0.5f;
+		if( mat_shininess[0] < 8.0f )
+			mat_shininess[0] = 8.0f;
+	}
+	else if( event.getChar() == '.' || event.getChar() == '>' ){
+		mat_shininess[0] *= 2.0f;
+		if( mat_shininess[0] > 128.0f )
+			mat_shininess[0] = 128.0f;
 	}
 }
 
-void CinderLightApp::keyUp( KeyEvent event ) {
-}
-
-
 void CinderLightApp::update()
 {
+	if( mIsMouseDown ) // using small number instead of 0.0 because lights go black after a few seconds when going to 0.0f
+		mDirectional -= ( mDirectional - 0.00001f ) * 0.1f;  
+	else 
+		mDirectional -= ( mDirectional - 1.0f ) * 0.1f;
+	
 	double elapsed = getElapsedSeconds() - mTimePrevious;
 	mTimePrevious = getElapsedSeconds();
 	
 	if(bAnimate) mTime += 0.25 * elapsed;
 	
-	/*// animate camera
-	 if(bAnimate) {
-	 Vec3f	eye = Vec3f( cosf(mTime), 1.0f, sinf(mTime) ) * 8.0f;
-	 mCamera->lookAt( eye, Vec3f::zero() );
-	 } //*/
-	
-	// animate light
 	if(bAnimate) {
-		Vec3f	p = Vec3f( cosf(mTime), 1.0f - 0.5f * sinf(0.1f * mTime), sinf(mTime) ) * 75.0f;
-		_light->lookAt( -p, Vec3f::zero() );
+//		Vec3f	p = Vec3f( cosf(mTime), 1.0f - 0.5f * sinf(0.1f * mTime), sinf(mTime) ) * 75.0f;
+//		_light->lookAt( -p, Vec3f::zero() );
 	}//*/
 }
 
 void CinderLightApp::draw()
-{
-	// clear out the window with black
-//	gl::clear( Color( 0, 0, 0 ) ); 
-	gl::clear();
-	gl::enableDepthWrite();
-	gl::enableDepthRead();
+{	
+	float sphereSpacing		= 75.0f;
+	float sphereRadius		= 35.0f;
+	int sphereDetail		= 64;
+	int spheresPerRow		= 9;
+	int spheresPerColumn	= 5;
 	
 	glEnable( GL_LIGHTING );
-	gl::setMatrices( mMayaCam.getCamera() );
-
-	_light->update( mMayaCam.getCamera() );
-	_light->enable();
-	_ribbonMaterial->apply();
-	// DRAW
-	glPushMatrix();
-//		gl::rotate( getElapsedSeconds() * 0.01f );
-		gl::drawSphere( ci::Vec3f(0.0f, sinf(0.01f * getElapsedFrames()) * 50, 0.0f) , 10, 32);
-	glPopMatrix();
-	// DRAW NO LIGHTING
-	glDisable( GL_LIGHTING );
+	glEnable( GL_LIGHT0 );
 	
-	// Draw the lighting frustum
-	glColor3f( 1.0f, 1.0f, 1.0f );
-	gl::drawFrustum( _light->getShadowCamera() );
+	std::cout << mDirectional << std::endl;
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+	gl::setMatrices( mMayaCam.getCamera() );
+	
+	GLfloat light_position[] = { mMousePos.x, mMousePos.y, 75.0f, mDirectional };
+	glLightfv( GL_LIGHT0, GL_POSITION, light_position );
+	
+	for( int x=0; x<spheresPerRow; x++ ){
+		float xPer = (float)x/(float)(spheresPerRow - 1 );
+		
+		for( int y=0; y<spheresPerColumn; y++ ){
+			float yPer = (float)y/(float)(spheresPerColumn - 1 );
+			
+			float xp = sphereSpacing * ( x - ( spheresPerRow - 1 ) * 0.5f );
+			float yp = sphereSpacing * ( y - ( spheresPerColumn - 1 ) * 0.5f );
+			glPushMatrix();
+			glTranslatef( xp, yp, 0.0);
+			
+			if( DIFFUSE ){
+				ci::ColorA color( CM_HSV, xPer, yPer, 1.0f, 1.0f );
+				glMaterialfv( GL_FRONT, GL_DIFFUSE,	color );
+			} else {
+				glMaterialfv( GL_FRONT, GL_DIFFUSE,	no_mat );
+			}
+			
+			if( AMBIENT )
+				glMaterialfv( GL_FRONT, GL_AMBIENT,	mat_ambient );
+			else
+				glMaterialfv( GL_FRONT, GL_AMBIENT,	no_mat );
+			
+			if( SPECULAR ){
+				glMaterialfv( GL_FRONT, GL_SPECULAR, mat_specular );
+				glMaterialfv( GL_FRONT, GL_SHININESS, mat_shininess );
+			} else {
+				glMaterialfv( GL_FRONT, GL_SPECULAR, no_mat );
+				glMaterialfv( GL_FRONT, GL_SHININESS, no_shininess );
+			}
+			
+			if( EMISSIVE )
+				glMaterialfv( GL_FRONT, GL_EMISSION, mat_emission );
+			else
+				glMaterialfv( GL_FRONT, GL_EMISSION, no_mat );			
+			
+			gl::drawSphere( Vec3f::zero(), sphereRadius, sphereDetail );
+			glPopMatrix();
+		}
+	}
+	
+	drawInfoPanel();
+	
+	mCounter++;
+}
+
+void CinderLightApp::drawInfoPanel()
+{
+	glDisable( GL_LIGHTING );
+	glEnable( GL_TEXTURE_2D );
+	glColor4f( 1, 1, 1, 1 );
+	
+	gl::pushMatrices();
+	gl::setMatricesWindow( getWindowSize() );
+	mInfoPanel.update( Vec2f( getWindowWidth(), getWindowHeight() ), mCounter );
+	gl::popMatrices();
+	
+	glDisable( GL_TEXTURE_2D );
 }
 
 
 CINDER_APP_BASIC( CinderLightApp, RendererGl )
+

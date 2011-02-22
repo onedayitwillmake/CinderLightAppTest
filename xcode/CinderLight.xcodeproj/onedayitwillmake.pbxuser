@@ -2,9 +2,9 @@
 {
 	00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1411, 2379}}";
-			sepNavSelRange = "{2369, 0}";
-			sepNavVisRange = "{3704, 552}";
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 3549}}";
+			sepNavSelRange = "{1931, 0}";
+			sepNavVisRange = "{1038, 1462}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -138,6 +138,14 @@
 			4839257913142F1200360EC8 /* PBXTextBookmark */ = 4839257913142F1200360EC8 /* PBXTextBookmark */;
 			4839257A13142F1200360EC8 /* PBXTextBookmark */ = 4839257A13142F1200360EC8 /* PBXTextBookmark */;
 			4839257B13142F1200360EC8 /* PBXTextBookmark */ = 4839257B13142F1200360EC8 /* PBXTextBookmark */;
+			483925B41314338700360EC8 /* PBXTextBookmark */ = 483925B41314338700360EC8 /* PBXTextBookmark */;
+			483925B51314338700360EC8 /* PBXTextBookmark */ = 483925B51314338700360EC8 /* PBXTextBookmark */;
+			483925B61314338700360EC8 /* PBXTextBookmark */ = 483925B61314338700360EC8 /* PBXTextBookmark */;
+			483925B71314338700360EC8 /* PBXTextBookmark */ = 483925B71314338700360EC8 /* PBXTextBookmark */;
+			483925B81314338700360EC8 /* PBXTextBookmark */ = 483925B81314338700360EC8 /* PBXTextBookmark */;
+			483925B91314338700360EC8 /* PBXTextBookmark */ = 483925B91314338700360EC8 /* PBXTextBookmark */;
+			483925BD131433BD00360EC8 /* PBXTextBookmark */ = 483925BD131433BD00360EC8 /* PBXTextBookmark */;
+			483925BE131433BD00360EC8 /* PBXTextBookmark */ = 483925BE131433BD00360EC8 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 483924791314203000360EC8 /* Source Control */;
 		userBuildSettings = {
@@ -184,7 +192,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 11";
 		rLen = 0;
-		rLoc = 529;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
@@ -194,7 +202,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 10";
 		rLen = 0;
-		rLoc = 512;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 389;
 		vrLoc = 0;
@@ -204,7 +212,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 14";
 		rLen = 0;
-		rLoc = 957;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 389;
 		vrLoc = 0;
@@ -228,7 +236,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 109";
 		rLen = 0;
-		rLoc = 4346;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 2127;
@@ -276,7 +284,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 67";
 		rLen = 0;
-		rLoc = 2207;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 1214;
@@ -286,7 +294,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 92";
 		rLen = 0;
-		rLoc = 3785;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 1885;
@@ -296,7 +304,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 109";
 		rLen = 0;
-		rLoc = 4346;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 2127;
@@ -342,7 +350,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 43";
 		rLen = 0;
-		rLoc = 1347;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 471;
 		vrLoc = 472;
@@ -362,7 +370,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 21";
 		rLen = 0;
-		rLoc = 639;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 559;
 		vrLoc = 2285;
@@ -429,8 +437,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 116";
-		rLen = 9;
-		rLoc = 2972;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 2323;
@@ -439,8 +447,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 116";
-		rLen = 9;
-		rLoc = 2972;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 2325;
@@ -449,8 +457,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 23";
-		rLen = 9;
-		rLoc = 542;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 543;
 		vrLoc = 182;
@@ -491,9 +499,9 @@
 		path = /Users/onedayitwillmake/GIT/LIBRARY/Cinder/include/cinder/app/App.h;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1411, 6162}}";
-			sepNavSelRange = "{5761, 0}";
-			sepNavVisRange = "{5002, 1047}";
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 6383}}";
+			sepNavSelRange = "{3296, 0}";
+			sepNavVisRange = "{2550, 2286}";
 		};
 	};
 	483924D21314280B00360EC8 /* PBXTextBookmark */ = {
@@ -510,7 +518,7 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		rLen = 1;
-		rLoc = 26;
+		rLoc = 0;
 		rType = 1;
 	};
 	483924D41314280B00360EC8 /* PBXTextBookmark */ = {
@@ -518,7 +526,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 151";
 		rLen = 0;
-		rLoc = 4346;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 494;
 		vrLoc = 3031;
@@ -582,7 +590,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 146";
 		rLen = 0;
-		rLoc = 4104;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 510;
 		vrLoc = 3031;
@@ -592,7 +600,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 153";
 		rLen = 0;
-		rLoc = 4355;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 542;
 		vrLoc = 3031;
@@ -622,7 +630,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 143";
 		rLen = 0;
-		rLoc = 4028;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 560;
 		vrLoc = 3061;
@@ -632,7 +640,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 143";
 		rLen = 0;
-		rLoc = 4028;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 3059;
@@ -652,7 +660,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 152";
 		rLen = 0;
-		rLoc = 3666;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 3147;
@@ -672,7 +680,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 131";
 		rLen = 0;
-		rLoc = 3157;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 627;
 		vrLoc = 2588;
@@ -692,7 +700,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 95";
 		rLen = 0;
-		rLoc = 2381;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 1388;
@@ -712,7 +720,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 154";
 		rLen = 0;
-		rLoc = 3652;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 3246;
@@ -752,7 +760,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 175";
 		rLen = 0;
-		rLoc = 4191;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 3771;
@@ -762,7 +770,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 175";
 		rLen = 0;
-		rLoc = 4191;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 3735;
@@ -782,7 +790,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 86";
 		rLen = 0;
-		rLoc = 2008;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 1351;
@@ -802,7 +810,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 95";
 		rLen = 0;
-		rLoc = 2375;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 1517;
@@ -822,7 +830,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 95";
 		rLen = 0;
-		rLoc = 2375;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 3773;
@@ -832,7 +840,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
 		rLen = 0;
-		rLoc = 4181;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 3847;
@@ -852,7 +860,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
 		rLen = 0;
-		rLoc = 4173;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 3822;
@@ -862,7 +870,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
 		rLen = 0;
-		rLoc = 4173;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 550;
 		vrLoc = 3847;
@@ -892,7 +900,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 175";
 		rLen = 0;
-		rLoc = 4191;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 3822;
@@ -902,7 +910,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
 		rLen = 0;
-		rLoc = 4172;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 576;
 		vrLoc = 3822;
@@ -922,7 +930,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 142";
 		rLen = 0;
-		rLoc = 3313;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 541;
 		vrLoc = 3165;
@@ -932,7 +940,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
 		rLen = 0;
-		rLoc = 4167;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 564;
 		vrLoc = 3847;
@@ -951,8 +959,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
-		rLen = 2;
-		rLoc = 4055;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 3822;
@@ -971,8 +979,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 174";
-		rLen = 2;
-		rLoc = 4055;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 3847;
@@ -1011,8 +1019,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 171";
-		rLen = 6;
-		rLoc = 3992;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 624;
 		vrLoc = 3808;
@@ -1021,8 +1029,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 171";
-		rLen = 6;
-		rLoc = 3992;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 576;
 		vrLoc = 3808;
@@ -1041,8 +1049,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 93";
-		rLen = 49;
-		rLoc = 2223;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 1658;
@@ -1062,7 +1070,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 82";
 		rLen = 0;
-		rLoc = 1803;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 768;
 		vrLoc = 1709;
@@ -1092,7 +1100,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 176";
 		rLen = 0;
-		rLoc = 4188;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 3778;
@@ -1102,7 +1110,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 176";
 		rLen = 0;
-		rLoc = 4184;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 562;
 		vrLoc = 3813;
@@ -1131,8 +1139,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 155";
-		rLen = 6;
-		rLoc = 3668;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 580;
 		vrLoc = 3427;
@@ -1142,7 +1150,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 155";
 		rLen = 0;
-		rLoc = 3677;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 519;
 		vrLoc = 3489;
@@ -1162,7 +1170,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 176";
 		rLen = 0;
-		rLoc = 4172;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 3871;
@@ -1191,8 +1199,8 @@
 		isa = PBXTextBookmark;
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 155";
-		rLen = 6;
-		rLoc = 3668;
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 3214;
@@ -1202,7 +1210,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
 		name = "CinderLightApp.cpp: 95";
 		rLen = 0;
-		rLoc = 2369;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 3704;
@@ -1216,6 +1224,93 @@
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 5002;
+	};
+	483925A71314322400360EC8 /* InfoPanel.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1411, 897}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 445}";
+		};
+	};
+	483925B41314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 483925A71314322400360EC8 /* InfoPanel.cpp */;
+		name = "InfoPanel.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	483925B51314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 4";
+		rLen = 0;
+		rLoc = 116;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 33;
+	};
+	483925B61314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	483925B71314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 483924CE131427C400360EC8 /* App.h */;
+		name = "App.h: 86";
+		rLen = 0;
+		rLoc = 3296;
+		rType = 0;
+		vrLen = 2286;
+		vrLoc = 2550;
+	};
+	483925B81314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1003;
+		vrLoc = 0;
+	};
+	483925B91314338700360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 4";
+		rLen = 0;
+		rLoc = 115;
+		rType = 0;
+		vrLen = 1478;
+		vrLoc = 33;
+	};
+	483925BD131433BD00360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	483925BE131433BD00360EC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* CinderLightApp.cpp */;
+		name = "CinderLightApp.cpp: 86";
+		rLen = 0;
+		rLoc = 1931;
+		rType = 0;
+		vrLen = 1462;
+		vrLoc = 1038;
 	};
 	8D1107260486CEB800E47090 /* CinderLight */ = {
 		activeExec = 0;
